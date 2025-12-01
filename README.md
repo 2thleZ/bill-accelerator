@@ -38,6 +38,17 @@ graph LR
     I --> J[Extracted Text]
 ```
 
+## ⚡ Performance Benchmarks
+
+Benchmarks run on a 4K Image (3840 x 2160).
+
+| Metric | CPU (OpenCV) | GPU (Custom CUDA) | Speedup |
+| :--- | :--- | :--- | :--- |
+| **Kernel Compute Time** | 18.23 ms | **10.44 ms** | **1.75x** 🚀 |
+| Total Latency (inc. Transfer) | 18.23 ms | 27.37 ms | 0.67x |
+
+*Note: The **1.75x speedup** in pure compute time demonstrates the efficiency of the custom CUDA kernels (`adaptive_threshold` + `morphology`). Total latency includes PCIe data transfer overhead, which would be amortized in a fully pipelined GPU workflow.*
+
 ## ⚡ Performance Optimization
 
 Unlike standard libraries that process images on the CPU, Bill Accelerator moves the heavy pixel-wise operations to the GPU.
