@@ -1,10 +1,13 @@
 # Bill Accelerator: HPC-Enhanced OCR Pipeline
 
+
+![Description of Image](assets/frontend.png)
+
 **Bill Accelerator** is a high-performance receipt processing system that leverages custom **CUDA kernels** for image preprocessing and **Deep Learning** (EasyOCR) for text extraction.
 
 Integrates **High-Performance Computing (HPC)** with **Machine Learning Systems**.
 
-## 🚀 Key Features
+## Key Features
 
 *   **Hybrid Architecture**: Core image processing logic written in **C++ / CUDA** for maximum throughput, exposed to **Python** via `pybind11`.
 *   **Custom GPU Kernels**:
@@ -13,7 +16,7 @@ Integrates **High-Performance Computing (HPC)** with **Machine Learning Systems*
 *   **Seamless ML Integration**: Preprocessed tensors are passed directly to the OCR engine, minimizing host-device transfers.
 *   **Interactive UI**: Streamlit-based interface for real-time testing and visualization.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 *   **Core**: C++17, CUDA 11+
 *   **Bindings**: Pybind11
@@ -21,7 +24,7 @@ Integrates **High-Performance Computing (HPC)** with **Machine Learning Systems*
 *   **Interface**: Streamlit, NumPy
 *   **Build System**: CMake
 
-## 🏗️ Architecture
+## Architecture
 
 ```mermaid
 graph LR
@@ -38,7 +41,7 @@ graph LR
     I --> J[Extracted Text]
 ```
 
-## ⚡ Performance Benchmarks
+## Performance Benchmarks
 
 Benchmarks run on a 4K Image (3840 x 2160).
 
@@ -55,7 +58,7 @@ Unlike standard libraries that process images on the CPU, Bill Accelerator moves
 *   **Memory Coalescing**: Kernels are designed to access global memory in coalesced transactions.
 *   **Shared Memory**: (Planned) Using shared memory tiles for stencil operations (thresholding/morphology) to reduce global memory bandwidth pressure.
 
-## 📦 Installation & Usage
+## Installation & Usage
 
 1.  **Set up Virtual Environment** (Recommended):
     ```bash
@@ -80,6 +83,6 @@ Unlike standard libraries that process images on the CPU, Bill Accelerator moves
     streamlit run python/app.py
     ```
 
-## 📝 License
+## License
 
 MIT License
