@@ -1,0 +1,6 @@
+build/
+__pycache__/
+*.so
+*.ppm
+.ipynb_checkpoints/
+bill_env/
